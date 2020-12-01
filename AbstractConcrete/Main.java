@@ -1,22 +1,6 @@
-/* EXPLORING CONCRETE & ABSTRACT CLASSES
-Keyword 'abstract' prevents a class from being instantiated.
-An abstract method must be overridden. These methods define a subclass protocol.
-An abstract method must be in an abstract class.
-All for the benefit of polymorphism, else you'd need a separate method for each class
-with specific parameters (Canine, feline etc).
-The first concrete class in the inheritance tree must implement (provide a body) all abstract methods.
-*/
-
 // superclass
 abstract class Animals {
-
-/*	public String makeNoise() {
-		return "none";
-	}
-*/
-
         public abstract String makeNoise();
-
 	// throws error: Canine is not abstract and does not override abstract method sleep() in Animals
 	// solved by adding sleep() to class Canine.
 	public abstract void sleep();
@@ -47,7 +31,7 @@ class Feline extends Animals {
 	public void sleep() {};
 }
 
-// sub-subclass (?)
+// subclass
 class Tiger extends Feline {
 
 	@Override
