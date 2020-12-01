@@ -12,3 +12,6 @@ Animal[] animals = new Animal[3];
 animals[0] = new Dog();
 animals[1] = new Cat();
 animals[2] = new Wolf();
+
+Overloaded methods:
+An overloaded method is not an example of inheritance or polymorphism rather it's a method with the same name as an existing method but with different arguments. The arguments must be different but the return type and the access level can be anything. 
