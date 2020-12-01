@@ -1,7 +1,3 @@
-/* EXPLORING INHERITANCE
-Use inheritance to avoid duplicating code in subclasses.
-*/
-
 // superclass
 class Animals {
 	String location = "nowhere";
