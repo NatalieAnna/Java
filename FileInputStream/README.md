@@ -1,4 +1,4 @@
-# Java
+FILE INPUT STREAM
 
 This class outputs the average of three columns from an input file that contains six integers.
 
