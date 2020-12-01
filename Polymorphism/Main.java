@@ -1,10 +1,3 @@
-/* EXPLORING POLYMORPHISM
-If you declare the method parameters as the superclass type, you can pass
-in any subclass object at runtime. This means that new subclass types
-can be added and the methods will still work (as long as the new class
-extends Animal).
-*/
-
 // superclass
 class Animals {
 	String location = "nowhere";
