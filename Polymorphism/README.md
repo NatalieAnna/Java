@@ -1,4 +1,4 @@
-Polymorphism
+POLYMORPHISM
 
 Unlike in regular variable declaration where the reference type and the object type are the same:
 
@@ -18,6 +18,7 @@ animals[1] = new Cat();
 
 animals[2] = new Wolf();
 
-Overloaded methods:
+
+OVERLOADED METHODS
 
 An overloaded method is not an example of inheritance or polymorphism rather it's a method with the same name as an existing method but with different arguments. The arguments must be different but the return type and the access level can be anything. 
