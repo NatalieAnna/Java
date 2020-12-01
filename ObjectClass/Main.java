@@ -1,7 +1,3 @@
-/* EXPLORING THE OBJECT CLASS
-Every class in Java extends class Object.
-*/
-
 // superclass
 class Animals {
 	String location = "nowhere";
