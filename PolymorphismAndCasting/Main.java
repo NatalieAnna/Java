@@ -1,5 +1,3 @@
-/* EXPLORING POLYMORPHISM, OBJECT CLASS & CASTING */
-
 import java.util.ArrayList;
 
 // superclass
