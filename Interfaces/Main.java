@@ -1,5 +1,3 @@
-/* EXPLORING INTERFACES */
-
 import java.util.ArrayList;
 
 // superclass
