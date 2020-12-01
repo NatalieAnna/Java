@@ -1,5 +1,3 @@
-/* INVOKNG SUPERCLASS */
-
 // superclass
 class Animals {
 	public String makeNoise() {
