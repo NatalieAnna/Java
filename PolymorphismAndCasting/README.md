@@ -1,1 +1,3 @@
-Casting Object object back to Dog object.
+CASTING
+
+Casting an Object object back to a Dog object.
