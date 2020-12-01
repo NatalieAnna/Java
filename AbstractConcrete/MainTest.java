@@ -1,13 +1,5 @@
-/* EXPLORING CONCRETE & ABSTRACT CLASSES
-TEST --> All for the benefit of polymorphism, else you'd need a separate method for each class
-with specific parameters (Canine, feline etc).
-*/
-
 // superclass
-abstract class Animals {
-
-        // public abstract String makeNoise();
-}
+abstract class Animals {}
 
 // subclass
 class Canine extends Animals {
