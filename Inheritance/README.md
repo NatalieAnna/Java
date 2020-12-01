@@ -1,4 +1,4 @@
-Inheritance.
+INHERITANCE
 
 An inheritance relationship means that the subclass inherits the public members (public instance variables and methods) of the superclass. The inherited methods can be overwritten (the arguments and types must match and the access level must be the same or better), appended to, and new methods and instance variables can be added.
 
