@@ -1,6 +1,7 @@
 INHERITANCE
 
 An inheritance relationship means that the subclass inherits the public members (public instance variables and methods) of the superclass. The inherited methods can be overwritten (the arguments and types must match and the access level must be the same or better), appended to, and new methods and instance variables can be added.
+(Why? Maybe using accessor methods to get to frequently used superclass members might be too slow.)
 
 Instance variables cannot be overwritten because inheritance is intended to modify behaviour. Behaviour is exposed through methods, and that's why they can be overridden. Overriding and overloading refers only to methods. 
 Fields are not behaviour but state. You can only "hide" the inherited variables in a child class but it is bad practise to hide fields.
