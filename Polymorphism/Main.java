@@ -1,20 +1,11 @@
 // superclass
 class Animals {
 	String location = "nowhere";
-	public boolean attendedSchool = false;
-
-	public Animals () {
-	}
 
 	public String makeNoise() {
 		return "none";
 	}
 
-        public boolean getSchool() {
-                return attendedSchool;
-        }
-
-	// all calls to this method return the Animals version
 	public String getLocation() {
 		return location;
 	}
@@ -23,98 +14,69 @@ class Animals {
 // subclass
 class Canine extends Animals {
 	String location = "Bushtrack";
-	boolean attendedSchool = true;
 
+	// if commented out would return "none" as per superclass
 	@Override
-	public boolean getSchool() {
-		return attendedSchool;
-	}
-
-	public int canineOnlyMethod(int n) {
-		return n;
-	}
-
-	@Override // requires same name and param as parent class; must pass Canine IS-A Animal
 	public String makeNoise() {
 		return "Woof";
 	}
 
-        public String getLocation() {
-                return location;
-        }
+	public String getLocation() {
+		return location;
+	}
 }
 
 // subclass
 class Feline extends Animals {
 	String location = "Backyard";
-	boolean attendedSchool = false;
 
 	@Override
 	public String makeNoise() {
 		return "Meow";
 	}
 
-        public boolean getSchool() {
-                return attendedSchool;
-        }
-
-        public String getLocation() {
-                return location;
-        }
+    public String getLocation() {
+        return location;
+    }
 }
 
 class Tiger extends Feline {
 	String location = "Jungle";
-	boolean attendedSchool = true;
 
 	@Override
 	public String makeNoise() {
 		return "Roar";
 	}
 
-	// must have own getSchool()
-        public boolean getSchool() {
-                return attendedSchool;
-        }
-
-        public String getLocation() {
-                return location;
-        }
+	// Tiger's location will be inherited from Feline (i.e., = backyard)
+	// (as method commented out)
+	// public String getLocation() {
+	// 	return location;
+	// }
 }
-
-// polymorphic arguments & return types
+	// overloaded method (not override)
+	// polymorphic arguments & return types
+	// each subclass must have its own makeNoise() and getLocation()
 class Vet {
-	public static String giveShot(Animals a) {
-		return a.makeNoise();
-	}
-
-	//Overload (not Override)
 	public static String giveShot(Animals a, int quantity) {
-		return a.makeNoise() + ", " + quantity;
+		return a + " says " + a.makeNoise() + " while at " + a.getLocation() + " after " + quantity + " mL shot.";
 	}
-
-        //Overload (not Override)
-	// each subclass must have own getLocation()
-        public static String giveShotWhere(Animals a, int quantity) {
-                return a.makeNoise() + ", at " + a.getLocation() + ", " + quantity + " mLs.";
-        }
-
 }
 
 // main method
 class Main {
 	public static void main(String[] args) {
+		// polymorphism - the reference type is the superclass of the object type
 		Animals[] animals = new Animals[3];
 		animals[0] = new Canine();
 		animals[1] = new Feline();
 		animals[2] = new Tiger();
 
+		// passes in all subclass objects at runtime
 		for ( int i = 0 ; i < animals.length ; i++ ) {
 			System.out.println(animals[i].makeNoise());
-			System.out.println(animals[i].getSchool());
-			System.out.println(Vet.giveShot(animals[i]));
-			System.out.println(Vet.giveShot(animals[i], 2));
-			System.out.println(Vet.giveShotWhere(animals[i], 4));
+			System.out.println(animals[i].getLocation());
+			System.out.println(Vet.giveShot(animals[i], 3));
 			System.out.println();
 		}
 	}
@@ -124,21 +86,16 @@ class Main {
 Prints
 
 Woof
-true
-Woof
-Woof, 2
-Woof, at Bushtrack, 4 mLs.
+Bushtrack
+Canine@816f27d says Woof while at Bushtrack after 3 mL shot.
 
 Meow
-false
-Meow
-Meow, 2
-Meow, at Backyard, 4 mLs.
+Backyard
+Feline@87aac27 says Meow while at Backyard after 3 mL shot.
 
 Roar
-true
-Roar
-Roar, 2
-Roar, at Jungle, 4 mLs.
+Backyard
+Tiger@3e3abc88 says Roar while at Backyard after 3 mL shot.
+
 
 */
