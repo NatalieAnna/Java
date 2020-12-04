@@ -1,11 +1,9 @@
-// superclass
 class Animals {
 	public String makeNoise() {
 		return "I make noise - ";
 	}
 }
 
-// subclass
 class Canine extends Animals {
 	@Override
 	public String makeNoise() {
@@ -13,15 +11,16 @@ class Canine extends Animals {
 	}
 }
 
-// subclass
-class Dog extends Canine {}
-
-// main method
 class Main {
 	public static void main(String[] args) {
-		Dog aDog = new Dog();
-		System.out.println(aDog.makeNoise());
+		Canine canine = new Canine();
+		System.out.println(canine.makeNoise());
 	}
 }
 
-/* prints "I make noise -  Woof" */
+/*
+Prints
+
+"I make noise -  Woof"
+
+*/
