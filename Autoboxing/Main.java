@@ -41,6 +41,15 @@ class Main {
 		// error: Integer cannot be converted to String
 		//if (list.get(0) instanceof String) System.out.println("True");
 		//else System.out.println("False");
+
+		String s = "4";
+		System.out.println("x" + "x");
+		// cannot find symbol x
+		// System.out.println(x + x);
+
+		// converts String to primitive value
+		int x = Integer.parseInt(s);
+		System.out.println(x + x);
 	}
 }
 
@@ -63,5 +72,7 @@ takeInt: 9
 getInt: 9
 getInteger: 9
 True
+xx
+8
 
 */
