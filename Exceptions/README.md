@@ -5,14 +5,23 @@ Methods use 'exceptions' to tell the calling code that they failed. There will b
 To compile successfully they must be wrapped in a try/catch block.
 
 try {
+
   // the caler calls riskyMethod()
+  
   riskyMethod();
+  
 } catch(Exception ex) {
+
   // the risky method throws an exception back to the caller
+  
   System.out.println("Failed");
+  
   ex.printStackTrace();
+  
 } finally {
+
   System.out.println("Finally (optional) always executes");
+  
 }
 
 One method catches what another method throws. An exception is always thrown back to the caller.
