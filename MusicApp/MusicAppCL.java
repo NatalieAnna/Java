@@ -43,15 +43,13 @@ public class MusicAppCL {
 		} catch(Exception ex) {
                         ex.printStackTrace();
 		}
-
 	}
 
 	public static void main(String[] args) {
 		MusicAppCL app = new MusicAppCL();
 		if (args.length < 2) {
 			System.out.println("Add instrument and note args.");
-		}
-		else {
+		} else {
 			int instrument = Integer.parseInt(args[0]);
 			int note = Integer.parseInt(args[1]);
 			app.play(instrument, note);
