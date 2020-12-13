@@ -30,7 +30,6 @@ public class MusicApp {
 			// add the MidiEvent to the track
 			track.add(noteOn);
 
-			// ?
 			ShortMessage b = new ShortMessage();
 			// message type (128 means "note off")
 			b.setMessage(128, 1, 44, 100);
