@@ -1,5 +1,13 @@
 GUI & EVENTS
 
+Gui1.java - create JFrame, add button
+
+Gui2.java - implement ActionListener on button
+
+Gui3.java - display blue square, display jpeg, paint randomly coloured circle, paint circle with gradient
+
+Notes:
+
 - An event is an object of an Event class.
 
 - Event-handling: the process of getting and handling a user event (i.e., the user clicks a button).
