@@ -6,6 +6,8 @@ Gui2.java - implement ActionListener on button
 
 Gui3.java - display blue square, display jpeg, paint randomly coloured circle, paint circle with gradient
 
+Gui4.java - button colour changes with each click of button
+
 Notes:
 
 - An event is an object of an Event class.
