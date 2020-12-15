@@ -16,13 +16,17 @@ public class Gui5 {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JButton labelButton = new JButton("Change label");
+		// first inner listener class (LabelListener)
+		// instead of passing 'this' to method, pass a new instance of the appropriate listener class
 		labelButton.addActionListener(new LabelListener());
 
 		JButton colourButton = new JButton("Change colour");
+		// second inner listener class (ColourListener)
 		colourButton.addActionListener(new ColourListener());
 
+		// the label
 		label = new JLabel("I'm a label");
-
+		// the dot
 		MyDrawPanel drawPanel = new MyDrawPanel();
 
 		frame.getContentPane().add(BorderLayout.SOUTH, colourButton);
@@ -33,14 +37,14 @@ public class Gui5 {
 		frame.setVisible(true);
 	}
 
-	// inner class for label
+	// first ActionListener (inner) class for label
 	class LabelListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			label.setText("New text");
 		}
 	}
 
-	// inner class for colour change
+	// second ActionListener (inner) class for dot
 	class ColourListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			frame.repaint();
