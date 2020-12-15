@@ -8,7 +8,7 @@ Gui3.java - display blue square, display jpeg, paint randomly coloured circle, p
 
 Gui4.java - button colour changes with each click of button
 
-Gui5.java - Two button events using two inner classes, both implementing ActionListener 
+Gui5.java - Two button events using two inner classes, both implementing ActionListener (to be able to implement the same event-handling method more than once)
 
 Notes:
 
