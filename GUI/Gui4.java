@@ -27,7 +27,7 @@ public class Gui4 implements ActionListener {
 
 	public void actionPerformed(ActionEvent event) {
 		// frame repaints itself after user clicks button
-		// means that paintComponent() is call on every widget in the frame
+		// means that paintComponent() is called on every widget in the frame
 		frame.repaint();
 	}
 }
