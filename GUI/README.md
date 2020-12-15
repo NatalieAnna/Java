@@ -10,6 +10,8 @@ Gui4.java - button colour changes with each click of button
 
 Gui5.java - Two button events using two inner classes, both implementing ActionListener (to be able to implement the same event-handling method more than once)
 
+Gui6.java - Animation 
+
 Notes:
 
 - An event is an object of an Event class.
