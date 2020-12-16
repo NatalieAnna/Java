@@ -12,3 +12,5 @@ MusicGui1.java - automates note selection as written in MusicApp.java using for 
 MusicGui2.java - implements ControllerEventListener to print "la" after each note
 
 MusicGui3.java - animation to the beat of the song
+
+BeatBox.java - complete music program
