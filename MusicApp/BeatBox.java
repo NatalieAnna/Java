@@ -37,10 +37,10 @@ public class BeatBox {
 
 		// create ArrayList object
 		checkboxList = new ArrayList<JCheckBox>();
-		// create box that keeps button components stacked vertically (Y_AXIS)
+		// create box (lightweight container) that keeps button components stacked vertically (Y_AXIS)
 		Box buttonBox = new Box(BoxLayout.Y_AXIS);
 
-		// create buttons and event listeners, and add to buttonBox
+		// create buttons, add event listeners, and add to buttonBox
 		JButton start = new JButton("Start");
 		start.addActionListener(new MyStartListener());
 		buttonBox.add(start);
@@ -58,6 +58,7 @@ public class BeatBox {
 		buttonBox.add(downTempo);
 
 		// create box that keeps instrumentNames stacked vertically (Y_AXIS)
+        // The object of Label class is a component for placing text in a container. It is used to display a single line of read only text. 
 		Box nameBox = new Box(BoxLayout.Y_AXIS);
 		for (int i = 0; i < 16; i++) {
 			nameBox.add(new Label(instrumentNames[i]));
@@ -71,11 +72,14 @@ public class BeatBox {
 		// JFrame doesn't let you add to it directly so you must add to its content pane
 		theFrame.getContentPane().add(background);
 
+        // the checkbox grid
 		// a GridLayout object places components in a grid of cells. Each component takes all the available space within its cell, and each cell is exactly the same size
+        // GridLayout(16,16) creates a grid layout with the specified number of rows and columns.
 		GridLayout grid = new GridLayout(16,16);
-		grid.setVgap(1);
-		grid.setHgap(2);
-		// mainPanel gets another JPanel on top/centre of itself that has GridLayout
+		grid.setVgap(1); // vertical gap between components
+		grid.setHgap(2); // horizontal gap
+		// mainPanel is initialised with a JPanel that has the GridLayout
+        // and is added to the other JPanel 'background'
 		mainPanel = new JPanel(grid);
 		background.add(BorderLayout.CENTER, mainPanel);
 
@@ -109,7 +113,7 @@ public class BeatBox {
 	}
 
 	public void buildTrackAndStart() {
-		// array that will hold 16 elements/beats. If has value then play, else value is zero
+		// create array that will hold 16 elements/beats. If has value then play, else value is zero
 		int[] trackList = null;
 
 		// delete old tracks, make a fresh one
@@ -117,15 +121,19 @@ public class BeatBox {
 		track = sequence.createTrack();
 
 		// loop for each of the 16 rows i.e., Bass, Congo, etc
-		for (int i = 0; i < 16; i++) {
+        // first iteration creates 16 element array var 'trackList' and sets the'key'/instrument
+		for (int i = 0; i < 16; i++) { // 16 vertically ie through instruments
 			trackList = new int[16];
 			// set the key/instrument
-			int key = instruments[i];
-			// loop for each beat per row
-			for (int j = 0; j < 16; j++) {
+			int key = instruments[i]; // 35/bass drum
+			// nested loop for each beat/checkbox per row/instrument
+            // first iteration checkboxList.get(0)
+			for (int j = 0; j < 16; j++) { // 16 horizontally ie through checkboxed beats
+                // create JCheckBox and assign it the value of the first element in checkboxList
 				JCheckBox jc = (JCheckBox) checkboxList.get(j + (16*i));
-				if (jc.isSelected()) {
-					trackList[j] = key;
+				if (jc.isSelected()) { // if checkBox is ticked
+                    // trackList[0] = 35 ie bass drum 
+					trackList[j] = key; // trackList[0] gets 35
 				} else {
 					trackList[j] = 0;
 				}
@@ -173,11 +181,12 @@ public class BeatBox {
 	}
 
 	// makes events for one instrument at a time for all 16 beats, elements gets key or zero
-	public void makeTracks(int[] list) {
+	public void makeTracks(int[] list) { // trackList array
 		for (int i = 0; i < 16; i++) {
 			int key = list[i];
 
 			// make and add note on/off events to track
+            // add ticked notes one by one, excluding first/0
 			if (key != 0) {
 				track.add(makeEvent(144,9,key,100,i)); // note on
 				track.add(makeEvent(128,9,key,100,i+1)); // note off
