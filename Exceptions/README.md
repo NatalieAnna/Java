@@ -4,17 +4,17 @@ When an error occurs within a method, the method creates an object and hands it 
 
 There are three basic categories of exceptions:
 
-1. Checked exception.
+1. Checked exception:
 
 For example, an application prompts the user for an input file name and the user supplies the name of a nonexistent file. A well-written program will catch this exception and notify the user of the mistake, possibly prompting for a corrected file name. Checked exceptions are subject to the Catch or Specify Requirement.
 
 2. Unchecked exceptions:
 
-2a. Error.
+    2a. Error:
 
 For example, an application successfully opens a file for input, but is unable to read the file because of a hardware or system malfunction. An application might choose to catch this exception, in order to notify the user of the problem — but it also might make sense for the program to print a stack trace and exit.
 
-2b Runtime exception.
+    2b. Runtime exception:
 
 These usually indicate programming bugs, such as logic errors or improper use of an API. The application can catch this exception, but it probably makes more sense to eliminate the bug that caused the exception to occur.
 
