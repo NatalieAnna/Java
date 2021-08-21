@@ -77,16 +77,13 @@ public class ForLoops
 	private void swapTwoElements(int i, int j)
 	{
 		int temp;
-
 		temp = arrA[i];
 		arrA[i] = arrA[j];
 		arrA[j] = temp;
-
 	}
 
 	public void reverseArray()
 	{
-
 		int i = 0;
 		int j = arrA.length-1;
 
@@ -98,3 +95,14 @@ public class ForLoops
 		}
 	}
 }
+
+/* 
+Returns:
+
+Starting array: {2, 4, 6, 8}
+Sum of array: 20
+Minimum value: 2
+After inserted element: {0, 2, 4, 6}
+Reversed array: {6, 4, 2, 0}
+
+*/
