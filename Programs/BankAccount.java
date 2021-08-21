@@ -10,10 +10,10 @@ class BankAccount
 	public static void main (String[] args) 
 	{
 		setInterestRate(5.00);
-          	System.out.println("The interest rate is " + getInterestRate() + "."); 
+        System.out.println("The interest rate is " + getInterestRate() + "."); 
 
 		BankAccount acc1 = new BankAccount(452,"Natalie");
-     		System.out.println(acc1.accountName + "'s account number is " + acc1.accountNumber + " and has a balance of $" + acc1.balance);
+     	System.out.println(acc1.accountName + "'s account number is " + acc1.accountNumber + " and has a balance of $" + acc1.balance);
 		System.out.println(acc1.toString());
 		System.out.println();
     
