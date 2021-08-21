@@ -67,3 +67,18 @@ class BankAccount
 		return  accountName  + "'s account number is "  + accountNumber + " and has a balance of $" + balance;
 	}
 }
+
+/*
+	Returns:
+
+	The interest rate is 5.0.
+	Natalie's account number is 452 and has a balance of $0.0
+	Natalie's account number is 452 and has a balance of $0.0
+
+	Sarah's account number is 453 and has a balance of $100.01
+	Sarah's account number is 453 and has a balance of $100.01
+
+	-1.0
+	0.01
+	
+*/
