@@ -4,12 +4,12 @@ public class BubbleSort
 	{  
 		int [] array = {8,5,0,9,3,1};
 		printArray(array);
-		BubSort(array);
+		bubSort(array);
 		printArray(array);
 		checkSorted(array, 0, 5);
 	}
 	
-	public static void BubSort(int [] a) 
+	public static void bubSort(int [] a) 
 	{
 		for (int right = a.length-1; right >= 0; --right)
 		{
