@@ -65,3 +65,12 @@ public class SelectionSort
 		return 1;
 	}
 }
+
+/*
+Output:
+
+{50,7,4,2,9,14,1}
+{1,2,4,7,9,14,50}
+Array is sorted
+
+*/
