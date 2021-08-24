@@ -184,3 +184,19 @@ public class Node
 		return next.delete(value);
 	}
 }
+
+/*
+Returns:
+
+Nodes: 4
+First node's element: 2
+[#1, 2]->[#2, 4]->[#3, 6]->[#4, 8]->null
+Sum of elements: 20
+Replacements made: 1
+[#1, 2]->[#2, 4]->[#3, 1]->[#4, 8]->null
+Smallest element: 1
+Insert node at start: [#1, 111]->[#5, 2]->[#2, 4]->[#3, 1]->[#4, 8]->null
+Insert node at end: [#1, 111]->[#5, 2]->[#2, 4]->[#3, 1]->[#4, 8]->[#6, 999]->null
+Delete node with element = 4: [#1, 111]->[#5, 2]->[#2, 1]->[#4, 8]->[#6, 999]->null
+
+*/
