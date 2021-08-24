@@ -61,3 +61,12 @@ public class BubbleSort
 		System.out.println();
 	}
 }
+
+/*
+Output:
+
+{8,5,0,9,3,1}
+{0,1,3,5,8,9}
+Array is sorted
+
+*/
