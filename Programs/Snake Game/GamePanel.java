@@ -33,7 +33,7 @@ public class GamePanel extends JPanel implements ActionListener {
 	public void startGame() {
 		newApple();
 		running = true;
-		timer = new Timer(DELAY, this); // 'this' is key listener
+		timer = new Timer(DELAY, this);
 		timer.start();
 	}
 	
