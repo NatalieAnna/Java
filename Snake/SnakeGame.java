@@ -1,4 +1,3 @@
-
 public class SnakeGame {
 
 	public static void main(String[] args) {
@@ -6,5 +5,4 @@ public class SnakeGame {
 		GameFrame frame = new GameFrame(); // or just 'new GameFrame()'
 
 	}
-
 }
