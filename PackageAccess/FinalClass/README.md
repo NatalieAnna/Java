@@ -3,5 +3,4 @@ Taking the public access example, when you add the 'final' keywork to the Wine c
 Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
 	The method getColour() is undefined for the type RedWine
 	The method getAlcohol() is undefined for the type RedWine
-
 	at Main.main(Main.java:6)
