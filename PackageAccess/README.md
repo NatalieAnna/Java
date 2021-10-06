@@ -5,7 +5,7 @@ There are 4 access controls (3 access modifiers + default/package access).
 * NONACCESS MODIFIERS: strictfp, final, abstract.
 
 - PUBLIC: gives all classes from all packages access to the public class. If classes are in different packages then they must be imported.
-- FINAL: the class can’t be subclassed/extended/inherited (i,e String class).
+- FINAL: the class can’t be subclassed/extended/inherited (ie, String class) - results in compiler error.
 - ABSTRACT: can’t be instantiated. Can only be extended/subclassed (ie from an abstract generic car class you would subclass a concrete Toyota class).
 
 If class A had access to class B it can:
