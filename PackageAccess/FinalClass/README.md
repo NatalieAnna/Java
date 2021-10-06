@@ -1,4 +1,4 @@
-Taking the public access example, when you add the 'final' keywork to the Wine class declaration you get a compile error:
+Taking the public access example, when you add the 'final' keyword to the Wine class declaration you get a compile error:
 
 Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
 	The method getColour() is undefined for the type RedWine
