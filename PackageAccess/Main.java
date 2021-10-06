@@ -8,3 +8,10 @@ class Main {
 							shiraz.getTannin() + " tannins.");	
 	}
 }
+
+/**
+Output:
+
+Shiraz is a red wine with 15% alcohol and high tannins.
+
+*/
