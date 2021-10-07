@@ -9,3 +9,4 @@ Taking the public access example, when you add the 'final' keyword to the Wine c
 	
 	at Main.main(Main.java:6)
 
+A final class obliterates a key benefit of OO - extensibility. Always assume that someday another programmer will need to extend your class (unless there are safety or security issues).
