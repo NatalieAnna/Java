@@ -1,3 +1,8 @@
+/* Blockchain 
+ * @author Natalie Anna
+ * @version April 2022
+ */
+
 import java.util.LinkedList;
 
 public class Blockchain {
