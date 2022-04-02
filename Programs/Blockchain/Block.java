@@ -10,7 +10,7 @@ public class Block {
 	private String currentHash;
 	private Block next;
 
-    // currentHash is SHA-256 hash of previous hash and current data
+    // currentHash is SHA-256 hash of previous hash + current data
     public String calculateHash() {
         String hash = ShaUtils.sha256(previousHash, data);
         return hash;
@@ -18,7 +18,7 @@ public class Block {
 
 	public Block() {
 		this.previousHash = "0";
-		this.data = "genesis block 1";
+		this.data = "genesis block";
 		this.currentHash = calculateHash();
 		this.next = null;
 	}
