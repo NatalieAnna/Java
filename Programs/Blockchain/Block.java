@@ -4,31 +4,39 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Block {
+	String previousHash;
+	public static String pHash;
+	String data;
+	String currentHash;
 
-	private String previousHash;
-	private String data;
-	private String currentHash;
-	private Block next;
+	// currentHash is SHA-256 hash of previous hash and current data
+        public String calculateHash() {
+                String hash = ShaUtils.sha256(this.previousHash, this.data);
+                return hash;
+        }
 
-    // currentHash is SHA-256 hash of previous hash + current data
-    public String calculateHash() {
-        String hash = ShaUtils.sha256(previousHash, data);
-        return hash;
-    }
-
-	public Block() {
-		this.previousHash = "0";
-		this.data = "genesis block";
-		this.currentHash = calculateHash();
-		this.next = null;
+	// genesis block
+	public Block(String previousHash, String data) {
+                this.previousHash = previousHash;
+                this.data = data;
+                this.currentHash = calculateHash();
+		pHash = currentHash;
 	}
-    
+
+        public Block(String data) {
+                this.previousHash = pHash;
+                this.data = data;
+                this.currentHash = calculateHash();
+		pHash = currentHash;
+        }
+
     @Override
     public String toString() {
-        return "[" + this.previousHash + " " + this.data + " " + this.currentHash + "] --> " + this.next;
+        return "[PH-" + this.previousHash +" D-" + this.data
+		+ " CH-" + this.currentHash + "]";
     }
 
-public class ShaUtils {
+private class ShaUtils {
 
     private static final Charset UTF_8 = StandardCharsets.UTF_8;
     private static final String OUTPUT_FORMAT = "%-20s:%s";
@@ -56,7 +64,7 @@ public class ShaUtils {
         String pHash = previousHash + data;
         byte[] shaInBytes = ShaUtils.digest(pHash.getBytes(UTF_8), "SHA3-256");
         String hash = bytesToHex(shaInBytes);
-	    return hash;
+	return hash;
     }
-  }
+ }
 }
