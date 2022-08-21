@@ -1,21 +1,22 @@
-// work in progress
-
-import java.util.Scanner;
 import java.io.*;
 import java.util.*;
+import java.util.Scanner;
 
 public class Script {
 
-	public static void main(String [] args) {
+	static String velocity = "velocity";
 
+	public static void main(String [] args) {
 		String [] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
-		int numOfNotes;
 		String firstNote;
-		String velocity;
+		int numOfNotes;
 		int firstIndex = 0;
 		int count = 0;
-		int remainingNotes = 0;
+		String filepath = "empty";
 		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Velocity (loud/soft): ");
+		velocity = sc.nextLine();
 
 		System.out.print("Enter first note: ");
 		firstNote = sc.nextLine();
@@ -29,26 +30,30 @@ public class Script {
 		System.out.print("Enter number of notes: ");
 		numOfNotes = sc.nextInt();
 
-		while (count < numOfNotes) {
-			for (int i = firstIndex; i < 12; i++) {
-				System.out.println(notes[i]);
-				writeToFile(notes[i]);
-				count++;
-			}
-			for (int i = 0; count < numOfNotes; i++) {
-				System.out.println(notes[i]);
-				count++;
-			}
+		for (int i = firstIndex; i < 12; i++) {
+			filepath = "/" + velocity + "/" + notes[i] + ".txt";
+			writeToFile(velocity, notes[i], filepath);
+			count++;
+                        System.out.println("count=" + count + " numOfNotes=" + numOfNotes + " i=" + i);
+			if (count == numOfNotes) { break; }
+			if (i == 11) { break; }
+		}
+
+		for (int i = 0; i < 24; i++) {
+			filepath = "/" + velocity + "/" + notes[i] + ".txt";
+			writeToFile(velocity, notes[i], filepath);
+			count++;
+                        System.out.println("count=" + count + " numOfNotes=" + numOfNotes + " i=" + i);
+			if (count == numOfNotes) { break; }
+			if (i == 23) { break; }
 		}
 	}
 
-	public static void writeToFile(String note) {
+	public static void writeToFile(String velocity, String note, String file) {
 		try(FileWriter fw = new FileWriter("file.txt", true);
 			BufferedWriter bw = new BufferedWriter(fw);
-			PrintWriter out = new PrintWriter(bw))
-			{
-			out.println("the text");
-			out.println(note);
+			PrintWriter out = new PrintWriter(bw)) {
+				out.println(velocity + " " + note + " with filepath " + file);
 		} catch (IOException e) {}
 	}
 }
